@@ -1,0 +1,83 @@
+<div class="card shadow-lg mx-auto my-4" style="width: 18rem">
+  <div class="img-wrapper w-100">
+    <div
+      class="image-loading w-100 h-100 d-flex align-items-center justify-content-center"
+      *ngIf="imgLoading"
+    >
+      Loading...
+    </div>
+    <img
+      *ngIf="!property.Image && detailsBtnDisabled === false"
+      src="assets/images/image-not-found.jpg"
+      class="card-img-top"
+      alt="..."
+      (load)="imgLoading = false"
+    />
+    <img
+      *ngIf="property.Image && detailsBtnDisabled === false"
+      src="assets/images/{{ property.Image }}"
+      (error)="imageFailed()"
+      class="card-img-top"
+      alt="..."
+      (load)="imgLoading = false"
+    />
+    <img
+      *ngIf="!property.Image && detailsBtnDisabled === true"
+      src="assets/images/prop-default.jpg"
+      class="card-img-top"
+      alt="..."
+      (load)="imgLoading = false"
+    />
+  </div>
+  <div class="card-body">
+    <div class="card-text">
+      <p class="propertyName">
+        {{
+          property.Name.length > 15
+            ? property.Name.slice(0, 15) + "..."
+            : property.Name
+        }}
+      </p>
+      <span
+        *ngIf="onLogin() && showWishList"
+        #wishlistSpan
+        class="wishlist"
+        tooltip="Add to wishlist"
+        placement="top"
+        (click)="Wishlist()"
+      >
+        <i *ngIf="!wishListed" class="fa-regular fa-heart"></i>
+        <i
+          *ngIf="wishListed"
+          style="color: #b46060"
+          class="fa-solid fa-heart"
+        ></i>
+      </span>
+    </div>
+    <div
+      class="address-details"
+      *ngIf="property.PropertyType.length > 0 && City"
+    >
+      {{ property.PropertyType }} in {{ City }}
+    </div>
+    <div *ngIf="property.BHK" class="bhk-details">
+      {{ property.BHK }} Bedroom, Hall, and Kitchen
+    </div>
+    <div
+      *ngIf="property.Price"
+      class="price-details"
+      style="color: green; font-weight: 700"
+    >
+      US$ {{ property.Price }}
+    </div>
+    <div class="details-btn mt-3">
+      <button
+        [disabled]="detailsBtnDisabled"
+        class="btn btn-secondary w-100 p-2"
+        routerLink="/property-detail/{{ property.Id }}"
+      >
+        <i class="fa-solid fa-circle-info"></i> &nbsp; Details
+      </button>
+    </div>
+  </div>
+</div>

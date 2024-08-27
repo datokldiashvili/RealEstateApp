@@ -1,0 +1,46 @@
+.card {
+  width: 60%;
+}
+
+.photo-tab {
+  border: 2px dotted #000;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploaded-img-name {
+  color: #000;
+  bottom: -40px;
+}
+
+.uploaded-img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-group label {
+  margin: 0 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-group label:first-child {
+  margin: 0 8px 0 0;
+}
+
+.show-modal-btn {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    width: 80%;
+  }
+  .show-modal-btn {
+    display: block;
+  }
+  .property-preview {
+    display: none;
+  }
+}

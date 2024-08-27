@@ -1,0 +1,51 @@
+<div class="row py-2">
+  <!-- City Filter -->
+  <div class="col-lg-6"></div>
+  <!-- <div class="col-lg-3"></div> -->
+  <div class="col-lg-6">
+    <div class="mx-auto d-flex align-items-center justify-content-center">
+      <div class="mb-3 mt-3 w-50">
+        <!-- Dropdown start -->
+        <ng-select
+          [items]="cities"
+          bindLabel="name"
+          bindValue="id"
+          [(ngModel)]="cityName"
+          dropdownPosition="bottom"
+          placeholder="Select a city"
+        >
+        </ng-select>
+      </div>
+
+      <button class="mx-2" (click)="searchCity()">
+        Search <i class="fa-solid fa-filter"></i>
+      </button>
+      <button class="ms-2" (click)="reverseSortOrder()">
+        Price
+        <!-- Descending -->
+        <i
+          *ngIf="sortOrder === 'Descending'"
+          class="fa-solid fa-arrow-down-wide-short"
+        ></i>
+        <!-- Ascending -->
+        <i
+          *ngIf="sortOrder === 'Ascending'"
+          class="fa-solid fa-arrow-up-wide-short"
+        ></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div
+    *ngFor="
+      let property of properties
+        | filter : searchedCity : 'City'
+        | sort : ['Price', sortOrder]
+    "
+    class="col-lg-4"
+  >
+    <app-property-card [property]="property"></app-property-card>
+  </div>
+</div>

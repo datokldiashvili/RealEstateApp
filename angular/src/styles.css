@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/css/forms.css";
+
+.form-card {
+  width: 50%;
+  margin-bottom: 16px;
+}
+
+/* Tooltip */
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popover-arrow {
+  position: absolute;
+}
+
+.tooltip {
+  position: absolute;
+}
+
+.tooltip-arrow {
+  position: absolute;
+}
+
+.tooltip.top .tooltip-arrow {
+  display: none;
+}
+
+.tooltip-inner {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #000000;
+}
+
+.required-field-asterisk {
+  color: red;
+}
+
+@media only screen and (max-width: 1000px) {
+  .form-card {
+    width: 80%;
+  }
+}

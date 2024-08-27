@@ -1,0 +1,142 @@
+<div class="row mt-5 mb-5" *ngIf="property; else propertyNotFound">
+  <div class="col-lg-4">
+    <div class="card w-100 shadow-lg" style="width: 18rem">
+      <img
+        *ngIf="Image"
+        class="card-img-top"
+        src="assets/images/{{ Image }}"
+        alt="Property image"
+        (error)="imgError()"
+      />
+      <img
+        *ngIf="!Image"
+        class="card-img-top"
+        src="assets/images/image-not-found.jpg"
+        alt="Property image"
+      />
+      <div class="card-body">
+        <h5 class="card-title py-2">
+          <span class="p-2" style="background-color: #1f6e8c; color: #fff">
+            {{ PropertyName }}
+          </span>
+        </h5>
+        <p class="card-text">
+          <b>{{ BHK }} BHK at ${{ Price }} in {{ City }}</b>
+        </p>
+        <div class="card-text">
+          <!-- Built Area -->
+          <div *ngIf="BuiltArea"><b>Built Area:</b> {{ BuiltArea }} <br /></div>
+          <!-- Carpet Area -->
+          <div *ngIf="CarpetArea">
+            <b>Carpet Area:</b> {{ CarpetArea }} <br />
+          </div>
+          <!-- Furnish Type -->
+          <div *ngIf="FurnishType">
+            <b>Furnishing Type:</b> {{ FurnishType }}
+          </div>
+        </div>
+        <div class="btn-group mt-3 w-100">
+          <a href="#" class="btn btn-primary w-100"
+            ><i class="fa-solid fa-heart"></i> Add to Wishlist
+          </a>
+          <a href="#" class="btn btn-success w-100 mx-1"
+            ><i class="fa-solid fa-comment"></i> Message</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <tabset>
+          <tab heading="Overview" id="tab1">
+            <h1 class="mt-2">Overview</h1>
+            <!-- Row 1st -->
+            <div class="row mt-3">
+              <div class="col-6">
+                <b>Property Name</b><br />
+                {{ PropertyName }}
+              </div>
+              <div class="col-6">
+                <b>Main Entrance</b><br />{{ MainEntrance }}
+              </div>
+            </div>
+            <!-- Row 2nd -->
+            <div class="row mt-3">
+              <div class="col-6">
+                <b>Floor number</b><br />
+                {{ FloorNumber }}
+              </div>
+              <div class="col-6">
+                <b>Gated Community</b><br />{{ GatedCommunity }}
+              </div>
+            </div>
+            <!-- Row 3rd -->
+            <div class="row mt-3">
+              <div class="col-6">
+                <b>Age of Property</b><br />
+                {{ AOP }}
+              </div>
+              <div class="col-6">
+                <b>Security Deposit</b><br />{{ SecurityDeposit }}
+              </div>
+            </div>
+            <!-- Row 4th -->
+            <div class="row mt-3">
+              <div class="col-6">
+                <b>Possession</b><br />
+                {{ ReadyToMove }}
+              </div>
+              <div class="col-6"><b>Maintenance</b><br />{{ Maintenance }}</div>
+            </div>
+            <!-- Row 5th -->
+            <div class="row mt-3">
+              <div class="col-12">
+                <b>Address</b><br />
+                {{ Address }}
+              </div>
+            </div>
+            <!-- Row 6th -->
+            <div class="row mt-3">
+              <div class="col-12">
+                <b>About Property</b><br />
+                {{ PropertyDescription }}
+              </div>
+            </div>
+          </tab>
+          <!-- Image gallery -->
+          <tab heading="Photos">
+            <ngx-gallery
+              [options]="galleryOptions"
+              [images]="galleryImages"
+              class="ngx-gallery"
+            ></ngx-gallery>
+          </tab>
+          <tab heading="Contact">
+            <h1 class="mt-2">Contact</h1>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Executes when the property is undefined -->
+<ng-template #propertyNotFound>
+  <div class="mt-5 p-5 d-flex align-items-center justify-content-center">
+    <div class="inner-div">
+      <h1 class="text-center">Property not found</h1>
+      <div class="btn-group mt-3 w-100 d-flex">
+        <button class="btn btn-secondary w-100 p-2" routerLink="/buy-property">
+          Back to Buy page
+        </button>
+        <button
+          class="btn btn-secondary w-100 p-2 ms-2"
+          routerLink="/rent-property"
+        >
+          Back to Rent page
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

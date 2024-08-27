@@ -1,0 +1,11 @@
+.err-page {
+  min-height: 80vh;
+}
+
+.err-page h1 {
+  font-size: 500%;
+}
+
+.err-page p {
+  font-size: 200%;
+}

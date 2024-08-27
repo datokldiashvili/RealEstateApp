@@ -1,0 +1,42 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:42122",
+      "sslPort": 44363
+    }
+  },
+  "profiles": {
+    "aspnet_core": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7191;http://localhost:5191",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      // ----------------------------------------------------------
+      // For development
+      // ----------------------------------------------------------
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+
+      // ----------------------------------------------------------
+      // For production
+      // ----------------------------------------------------------
+      //"launchUrl": "http://localhost:42122/api/country",
+      //"environmentVariables": {
+      //  "ASPNETCORE_ENVIRONMENT": "Production"
+      //}
+    }
+  }
+}

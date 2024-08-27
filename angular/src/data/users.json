@@ -1,0 +1,11 @@
+[
+  {
+    "Id": 1,
+    "email": "shahedchowdhury120@gmail.com",
+    "name": "Shahed Chowdhury Omi",
+    "password": "Test@123",
+    "phoneNumber": "01768385687",
+    "wishlist": [1, 3],
+    "cart": []
+  }
+]

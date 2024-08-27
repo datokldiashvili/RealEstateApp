@@ -1,0 +1,58 @@
+<div class="card form-card mx-auto mt-3">
+  <div class="card-header">Login</div>
+  <div class="card-body">
+    <form [formGroup]="loginForm">
+      <!-- ----------------------------------------------------------------- -->
+      <!-- Email address -->
+      <!-- ----------------------------------------------------------------- -->
+      <div class="">
+        <label for="email" class="form-label"
+          >Email <span class="required-field-asterisk">*</span></label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          [placeholder]="'Enter email address'"
+        />
+        <span
+          class="err-msg"
+          *ngIf="!Email.valid && (Email.touched || loginBtnPressed)"
+          >Email is required</span
+        >
+      </div>
+      <!-- ----------------------------------------------------------------- -->
+      <!-- Password -->
+      <!-- ----------------------------------------------------------------- -->
+      <div class="mb-3">
+        <label for="password" class="form-label"
+          >Password <span class="required-field-asterisk">*</span></label
+        >
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          [placeholder]="'Enter password'"
+        />
+        <span
+          class="err-msg"
+          *ngIf="!Password.valid && (Password.touched || loginBtnPressed)"
+          >Password is required</span
+        >
+      </div>
+
+      <!-- ----------------------------------------------------------------- -->
+      <!-- Form buttons -->
+      <!-- ----------------------------------------------------------------- -->
+      <button type="reset" class="btn btn-danger me-2">Cancel</button>
+      <button type="submit" (click)="login()" class="btn btn-primary">
+        Login
+      </button>
+    </form>
+  </div>
+  <div class="card-footer">
+    Don't have an account? <a [routerLink]="['/user/register']">Register</a>
+  </div>
+</div>

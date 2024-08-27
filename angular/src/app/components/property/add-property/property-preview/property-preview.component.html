@@ -1,0 +1,30 @@
+<button
+  type="button"
+  #TOpenModal
+  class="btn btn-primary d-none"
+  (click)="openModal(template)"
+>
+  Open first modal
+</button>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Property preview</h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="modalRef?.hide()"
+    >
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="card-body">
+      <app-property-card
+        [property]="propertyView"
+        [showWishList]="false"
+        [detailsBtnDisabled]="true"
+      ></app-property-card>
+    </div>
+  </div>
+</ng-template>

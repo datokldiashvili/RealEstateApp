@@ -1,0 +1,6 @@
+/* Image gallery */
+.ngx-gallery {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 16px;
+}

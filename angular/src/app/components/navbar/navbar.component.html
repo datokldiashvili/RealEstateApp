@@ -1,0 +1,120 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Real Estate Agency</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <!-- ms-auto: for moving the nav items to the right -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            routerLink="buy-property"
+            >Buy</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link mx-lg-2"
+            routerLinkActive="active"
+            routerLink="/rent-property"
+            >Rent</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/add-property"
+            >List property (Free)</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="!onLogin()"
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/user/login"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="!onLogin()"
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/user/register"
+            >Register</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="onLogin()"
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/wishlist"
+            ><i class="fa-regular fa-heart"></i> Wishlist
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="onLogin()"
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/cart"
+            ><i class="fa-solid fa-cart-shopping"> </i> Cart</a
+          >
+        </li>
+        <li *ngIf="onLogin()" class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Welcome {{ loggedInUser }}
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-gauge"></i> View dashboard</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-user"></i> My profile</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-key"></i> Change password</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onLogout()"
+                ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Bangladesh",
+    "internetCountryCode": "BD",
+    "countryCallingCode": "+880",
+    "nationality": "Bangladeshi",
+    "flag": "assets/images/countries-flag/bd.flag.png"
+  },
+  {
+    "id": 2,
+    "name": "India",
+    "internetCountryCode": "IN",
+    "countryCallingCode": "+91",
+    "nationality": "Indian",
+    "flag": "assets/images/countries-flag/india.flag.png"
+  },
+  {
+    "id": 3,
+    "name": "USA",
+    "internetCountryCode": "US",
+    "countryCallingCode": "+1",
+    "nationality": "American",
+    "flag": "assets/images/countries-flag/usa.flag.png"
+  }
+]

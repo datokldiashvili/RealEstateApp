@@ -30,15 +30,15 @@ export class PropertyDetailComponent implements OnInit {
 
   // Cities of Bangladesh
   cities = [
-    { id: 1, name: 'Dhaka' },
-    { id: 2, name: 'Sylhet' },
-    { id: 3, name: 'Chittagong' },
-    { id: 4, name: 'Khulna' },
-    { id: 5, name: 'Rajshahi' },
-    { id: 6, name: 'Barisal' },
-    { id: 7, name: 'Mymensingh' },
-    { id: 7, name: 'Comilla' },
-    { id: 8, name: 'Rangpur' },
+    { id: 1, name: 'Qutaisi' },
+    { id: 2, name: 'Batumi' },
+    { id: 3, name: 'Tbilisi' },
+    { id: 4, name: 'Gori' },
+    { id: 5, name: 'Rustavi' },
+    { id: 6, name: 'Zugdidi' },
+    { id: 7, name: 'Foti' },
+    { id: 7, name: 'Samtredia' },
+    { id: 8, name: 'Xashuri' },
   ];
 
   // Had to initialize so that property doesn't give undefined error

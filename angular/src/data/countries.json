@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "name": "Bangladesh",
+    "name": "Georgia",
     "internetCountryCode": "BD",
     "countryCallingCode": "+880",
-    "nationality": "Bangladeshi",
+    "nationality": "Georgian",
     "flag": "assets/images/countries-flag/bd.flag.png"
   },
   {

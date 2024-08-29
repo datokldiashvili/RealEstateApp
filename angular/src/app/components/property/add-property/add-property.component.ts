@@ -85,22 +85,22 @@ export class AddPropertyComponent implements OnInit {
   disableImageUpload: boolean = false;
   // Countries
   countries = [
-    { id: 1, name: 'Bangladesh' },
+    { id: 1, name: 'Georgia' },
     { id: 2, name: 'India' },
     { id: 3, name: 'USA' },
   ];
   // Cities will be dynamically loaded according to countries
-  // Major cities of Bangladesh
+  // Major cities of Georgia
   cities = [
-    { id: 1, name: 'Dhaka' },
-    { id: 2, name: 'Sylhet' },
-    { id: 3, name: 'Chittagong' },
-    { id: 4, name: 'Khulna' },
-    { id: 5, name: 'Rajshahi' },
-    { id: 6, name: 'Barisal' },
-    { id: 7, name: 'Mymensingh' },
-    { id: 7, name: 'Comilla' },
-    { id: 8, name: 'Rangpur' },
+    { id: 1, name: 'Qutaisi' },
+    { id: 2, name: 'Batumi' },
+    { id: 3, name: 'Tbilisi' },
+    { id: 4, name: 'Gori' },
+    { id: 5, name: 'Rustavi' },
+    { id: 6, name: 'Zugdidi' },
+    { id: 7, name: 'Foti' },
+    { id: 7, name: 'Samtredia' },
+    { id: 8, name: 'Xashuri' },
   ];
 
   // --------------------------------------------------------------------------------

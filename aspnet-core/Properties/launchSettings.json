@@ -22,21 +22,13 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      // ----------------------------------------------------------
-      // For development
-      // ----------------------------------------------------------
+    
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
 
-      // ----------------------------------------------------------
-      // For production
-      // ----------------------------------------------------------
-      //"launchUrl": "http://localhost:42122/api/country",
-      //"environmentVariables": {
-      //  "ASPNETCORE_ENVIRONMENT": "Production"
-      //}
+      
     }
   }
 }
